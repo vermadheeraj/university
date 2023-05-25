@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>University Website--</title>
+    <link rel="stylesheet" href="http://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+
+</head>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+
+    }
+
+    .header {
+        min-height: 100vh;
+        width: 100;
+        background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url(images/banner.png);
+        background-position: center;
+        background-size: cover;
+        position: relative;
+    }
+
+    nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 2% 6%;
+    }
+
+
+    .nav-links {
+        flex: 1;
+        text-align: right;
+
+    }
+
+    nav img {
+        width: 150px;
+    }
+
+    .nav-links ul li {
+        display: inline-block;
+        list-style: none;
+        padding: 5px 8px;
+        position: relative;
+
+    }
+
+    .nav-links ul li a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 15px;
+        font-family: serif;
+    }
+
+    .nav-links ul li::after {
+        content: '';
+        width: 0;
+        height: 2px;
+        background: #f44336;
+        display: block;
+        margin: auto;
+        transition: 0.5s;
+    }
+
+    .nav-links ul li:hover::after {
+        width: 100%;
+    }
+
+    .text-box {
+        width: 90%;
+        color: #fff;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+    }
+
+    .text-box h1 {
+        font-size: 50px;
+    }
+
+    .text-box p {
+        margin: 10px 0 20px;
+        font-size: 17px;
+        color: #fff;
+    }
+
+    .hero-btn {
+        display: inline-block;
+        text-decoration: none;
+        color: #fff;
+        border: 1px solid #fff;
+        border-radius: 5px;
+        padding: 8px 20px;
+        font-size: 15px;
+        background: transparent;
+        position: relative;
+        cursor: pointer;
+    }
+
+    .hero-btn:hover {
+        border: 1px solid #f44336;
+        background: #f44336;
+        transition: 1s;
+    }
+
+    nav .fa {
+        display: none;
+    }
+
+    nav .fa-bars {
+        display: none;
+    }
+
+    /*----course section---*/
+
+    .course {
+        width: 80%;
+        margin: auto;
+        text-align: center;
+        padding-top: 100px;
+    }
+
+    .course h1 {
+        font-size: 30px;
+        font-weight: 600;
+        font-family: sans-serif;
+    }
+
+    .course p {
+        font-size: 14px;
+        font-weight: 300;
+        line-height: 20px;
+        font-family: sans-serif;
+        padding: 10px;
+        color: #777;
+
+    }
+
+    .row {
+        display: flex;
+        margin-top: 50px;
+        justify-content: space-between;
+
+    }
+
+    .course-col {
+        flex-basis: 30%;
+        background: rgb(250, 233, 236);
+        border-radius: 10px;
+        margin-bottom: 5%;
+        padding: 20px 10px;
+        box-sizing: border-box;
+        transition: 0.5s;
+
+
+    }
+
+    .course-col h3 {
+        text-align: center;
+        font-weight: 600;
+        margin: 10px 0;
+    }
+
+    .course-col:hover {
+        box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.2);
+    }
+
+    .campus {
+        width: 80%;
+        text-align: center;
+        margin: auto;
+        padding-top: 50px;
+
+    }
+
+    .campus-col {
+        flex-basis: 30%;
+        border-radius: 10px;
+        margin-bottom: 30px;
+        position: relative;
+        overflow: hidden;
+
+
+    }
+
+    .campus-col img {
+        width: 100%;
+        height: 500px;
+        display: block;
+    }
+
+    .layer {
+        background: transparent;
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        transition: 0.5s;
+    }
+
+    .layer:hover {
+        background: rgba(240, 195, 195, 0.7);
+    }
+
+
+    .layer h3 {
+        width: 100%;
+        font-weight: bold;
+        font-family: sans-serif;
+        padding: 5px 8px;
+        color: black;
+        font-size: 20px;
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        transition: 0.5s;
+    }
+
+    .layer:hover h3 {
+        bottom: 49%;
+        opacity: 1;
+
+    }
+
+    /* facilities section */
+
+    .facilities {
+        width: 80%;
+        margin: auto;
+        text-align: center;
+        padding-top: 100px;
+    }
+
+    .facilities-col {
+        flex-basis: 31%;
+        border-radius: 10px;
+        margin-bottom: 5%;
+        text-align: left;
+    }
+
+    .facilities-col img {
+        width: 100%;
+        border-radius: 10px;
+    }
+
+    .facilities-col h3 {
+        font-size: 15px;
+        font-family: sans-serif;
+        text-align: left;
+        padding: 8px 5px;
+
+    }
+
+    .facilities-col p {
+        font-size: 12px;
+        font-family: sans-serif;
+        text-align: left;
+        padding: 8px 5px;
+        color: #777;
+    }
+
+    .testimonials {
+        width: 80%;
+        margin: auto;
+        text-align: center;
+        margin-top: 100px;
+
+    }
+
+    .testimonials-col {
+        flex-basis: 44%;
+        border-radius: 10px;
+        margin-bottom: 5%;
+        text-align: left;
+        background: #f1cac7;
+        padding: 25px;
+        cursor: pointer;
+        display: flex;
+    }
+
+    .testimonials-col img {
+        height: 40px;
+        border-radius: 50%;
+        margin-left: 5px;
+        margin-right: 30px;
+    }
+
+    .testimonials-col h3 {
+        font-size: 17px;
+        font-family: sans-serif;
+        text-align: left;
+        padding: 8px 5px;
+
+    }
+
+    .testimonials-col p {
+        font-size: 15px;
+        font-family: sans-serif;
+        text-align: left;
+        padding: 8px 5px;
+
+    }
+
+    .star-icon {
+        padding: 0;
+    }
+
+    .star-icon img {
+        width: 20px;
+        height: 20px;
+        margin: 0;
+    }
+
+    .cta {
+        margin: 100px auto;
+        width: 80%;
+        background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(banner2.jpg);
+        background-position: center;
+        background-size: cover;
+        border-radius: 10px;
+        text-align: center;
+        padding: 100px 0;
+    }
+
+    .cta h1 {
+        color: #fff;
+        font-size: 28px;
+        margin-bottom: 40px;
+        padding: 0;
+        font-family: sans-serif;
+    }
+
+        /* footer section css */
+
+        .footer {
+        background: #333;
+    }
+
+    .footer .box-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        padding-left: 25px;
+    }
+
+    .footer .box-container .box {
+        padding: 7px 0;
+        flex: 1 1 10rem;
+    }
+
+    .footer .box-container .box h3 {
+        font-size: 18px;
+        padding: 8px;
+        font-style: italic;
+        color: white;
+    }
+
+    .footer .box-container .box p {
+        font-size: 18px;
+        padding: 8px;
+        font-style: italic;
+        color: white;
+    }
+
+    .footer .box-container .box a {
+        display: block;
+        font-size: 18px;
+        font-style: italic;
+        color: white;
+    }
+
+    .footer .box-container .box a:hover {
+        color: #f44336;
+        text-decoration: underline;
+    }
+
+    .footer .credit {
+        text-align: center;
+        padding: 10px 8x;
+        margin-top: 10px;
+        font-size: 30px;
+        color: white;
+        font-style: italic;
+    }
+
+    .footer .credit span {
+        color: cadetblue;
+        font-style: italic;
+        font-size: 25px;
+    }
+
+    .online-icon img {
+        height: 30px;
+
+    }
+
+
+
+
+
+
+
+
+    @media (max-width: 700px) {
+
+        .text-box h1 {
+            font-size: 30px;
+        }
+
+        .nav-links ul li {
+            display: block;
+        }
+
+        .nav-links {
+            position: fixed;
+            background: #f44336;
+            height: 100vh;
+            width: 200px;
+            top: 0;
+            right: -200px;
+            text-align: left;
+            z-index: 2;
+            transition: 1s;
+        }
+
+        nav .fa {
+            display: block;
+            margin: 10px;
+            cursor: pointer;
+        }
+
+        nav .fa img {
+            width: 20px;
+            color: rgb(245, 245, 245);
+        }
+
+        .nav-links ul {
+            padding: 30px;
+        }
+
+        nav .fa-bars {
+            display: block;
+            color: #fff;
+            margin: 10px;
+            cursor: pointer;
+        }
+
+        nav .fa-bars img {
+            width: 30px;
+            height: 30px;
+        }
+
+        .row {
+            flex-direction: column;
+        }
+
+        .cta h1 {
+            color: #fff;
+            font-size: 20px;
+            margin-bottom: 40px;
+            padding: 0;
+            font-family: sans-serif;
+        }
+
+    }
+</style>
+
+<body>
+
+    <section class="header">
+        <nav>
+            <a href="university.html"><img src="images/logo.png" alt=""></a>
+            <div class="nav-links" id="navLinks">
+                <i class="fa fa-time" aria-hidden="true" onclick="hideMenu()"><img src="images/icons8-close-30.png" alt=""></i>
+                <ul>
+                    <li><a href="university.html">HOME</a></li>
+                    <li><a href="About.html">ABOUT</a></li>
+                    <li><a href="Course.html">COURSE</a></li>
+                    <li><a href="Blog.html">BLOG</a></li>
+                    <li><a href="contact.html">CONTACT</a></li>
+                </ul>
+            </div>
+            <i class="fa-bars" onclick="showMenu()"><img src="images/menu-icon.png" alt=""></i>
+        </nav>
+
+        <div class="text-box">
+
+            <h1>World's Biggest University</h1>
+            <p>Making Website is one of the easiest thing in the World. <br>
+                you just need to lean HTML,CSS ,JAVASCRIPT
+                and you are good to go.
+            </p>
+            <a href="#" class="hero-btn">Visit Us TO Know More</a>
+
+        </div>
+
+
+
+    </section>
+
+    
+
+    
+    <!--------------silder section-------------->
+  
+
+    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="images/banner (1).jpg" class="d-block w-100" alt="..." style="height: 500px; object-fit: cover; " >
+          </div>
+          <div class="carousel-item">
+            <img src="images/banner (2).jpg" class="d-block w-100" alt="..." style="height: 500px; object-fit: cover;">
+          </div>
+          <div class="carousel-item">
+            <img src="images/banner.png" class="d-block w-100" alt="..." style="height: 500px; object-fit: cover;">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+
+
+    <!--------------Course section-------------->
+
+    <section class="course">
+
+
+        <h1>Course We Offer</h1>
+
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias modi, necessitatibus ullam non quis
+            facilis doloribus eos laboriosam vitae odio consectetur sit distinctio accusantium accusamus tempore quae at
+            nam natus?</p>
+
+        <div class="row">
+            <div class="course-col">
+                <h3>Intermediate</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet atque laudantium porro neque dolore
+                    cupiditate minima sequi ex explicabo recusandae!
+                </p>
+            </div>
+
+            <div class="course-col">
+                <h3>Degree</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet atque laudantium porro neque dolore
+                    cupiditate minima sequi ex explicabo recusandae!
+                </p>
+            </div>
+
+            <div class="course-col">
+                <h3>Post Graduation</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet atque laudantium porro neque dolore
+                    cupiditate minima sequi ex explicabo recusandae!
+                </p>
+            </div>
+
+
+
+        </div>
+
+
+    </section>
+
+
+    <!-----------------campus section------------------------->
+
+
+    <section class="campus">
+
+        <h1>Our Globle Campus</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit, illo.</p>
+
+        <div class="row">
+            <div class="campus-col">
+               
+                <img src="images/london1.avif" alt="">
+                <div class="layer">
+                    <h3>LONDON</h3>
+                </div>
+            </div>
+
+            <div class="campus-col">
+                <img src="images/america1.avif" alt="">
+                <div class="layer">
+                    <h3>NEW YORK</h3>
+                </div>
+            </div>
+
+            <div class="campus-col">
+                <img src="images/college (1).jpg" alt="">
+                <div class="layer">
+                    <h3>WASHINGTON</h3>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="campus-col">
+                <img src="images/london1.avif" alt="">
+                <div class="layer">
+                    <h3>LONDON</h3>
+                </div>
+            </div>
+
+            <div class="campus-col">
+                <img src="images/america1.avif" alt="">
+                <div class="layer">
+                    <h3>NEW YORK</h3>
+                </div>
+            </div>
+
+            <div class="campus-col">
+                <img src="images/college (2).jpg" alt="">
+                <div class="layer">
+                    <h3>WASHINGTON</h3>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!--------------Facilities section----------->
+
+
+    <section class="facilities">
+        <h1>Our Facilities</h1>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Placeat, officia.</p>
+
+        <div class="row">
+            <div class="facilities-col">
+                <img src="images/library.png" alt="">
+                <h3>WOrld Class Library</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti dolore dolorum laudantium eos earum
+                    cumque nesciunt cum, deserunt cupiditate officia!</p>
+            </div>
+
+            <div class="facilities-col">
+                <img src="images/basketball.png" alt="">
+                <h3>Largest Play Ground</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti dolore dolorum laudantium eos earum
+                    cumque nesciunt cum, deserunt cupiditate officia!</p>
+            </div>
+
+            <div class="facilities-col">
+                <img src="images/cafeteria.png" alt="">
+                <h3>Tasty And Healthy Food</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti dolore dolorum laudantium eos earum
+                    cumque nesciunt cum, deserunt cupiditate officia!</p>
+            </div>
+
+
+        </div>
+
+        <div class="row">
+            <div class="facilities-col">
+                <img src="images/footboll.jpg" alt="">
+                <h3>playing football</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti dolore dolorum laudantium eos earum
+                    cumque nesciunt cum, deserunt cupiditate officia!</p>
+            </div>
+
+            <div class="facilities-col">
+                <img src="images/university sport.webp" alt="">
+                <h3>Largest Play Ground</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti dolore dolorum laudantium eos earum
+                    cumque nesciunt cum, deserunt cupiditate officia!</p>
+            </div>
+
+            <div class="facilities-col">
+                <img src="images/sport2.jpeg" alt="">
+                <h3>Playing ball</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti dolore dolorum laudantium eos earum
+                    cumque nesciunt cum, deserunt cupiditate officia!</p>
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!------------testimonial section------------->
+
+    <section class="testimonials">
+        <h1>What Our Student Says</h1>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iste, quos.</p>
+
+        <div class="row">
+            <div class="testimonials-col">
+                <img src="images/user1.jpg" alt="">
+                <div>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio libero quidem ut assumenda!
+                        Delectus eaque quae modi consequatur beatae tempora placeat, harum voluptatum minus at eligendi?
+                        Officia libero consequuntur recusandae.</p>
+                    <h3>Christine Berkley</h3>
+                    <i class="star-icon"><img src="images/icons8-star-30.png" alt=""></i>
+                    <i class="star-icon"><img src="images/icons8-star-30.png" alt=""></i>
+                    <i class="star-icon"><img src="images/icons8-star-30.png" alt=""></i>
+                    <i class="star-icon"><img src="images/icons8-star-30.png" alt=""></i>
+                    <i class="star-icon"><img src="images/icons8-star-30.png" alt=""></i>
+                </div>
+            </div>
+
+            <div class="testimonials-col">
+                <img src="images/user2.jpg" alt="">
+                <div>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio libero quidem ut assumenda!
+                        Delectus eaque quae modi consequatur beatae tempora placeat, harum voluptatum minus at eligendi?
+                        Officia libero consequuntur recusandae.</p>
+
+                    <h3>David Byer</h3>
+                    <i class="star-icon"><img src="images/icons8-star-30.png" alt=""></i>
+                    <i class="star-icon"><img src="images/icons8-star-30.png" alt=""></i>
+                    <i class="star-icon"><img src="images/icons8-star-30.png" alt=""></i>
+                    <i class="star-icon"><img src="images/icons8-star-30.png" alt=""></i>
+                    <i class="star-icon"><img src="images/icons8-star-30.png" alt=""></i>
+                </div>
+            </div>
+
+
+        </div>
+
+    </section>
+
+    <section class="cta">
+        <h1>Enroll for our variour Online course <br>
+            Anywhere form the world</h1>
+        <a href="" class="hero-btn">CONTACT US</a>
+
+    </section>
+
+    <section class="footer">
+
+        <div class="box-container">
+        
+            <div class="box">
+                <h3>About Us</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic, voluptates? Laudantium magni expedita
+                    dolores alias, eum distinctio. Iure, delectus itaque?</p>
+        
+            </div>
+        
+            <div class="box">
+                <h3>Branch Locations</h3>
+                <a href="#">India</a>
+                <a href="#">USA</a>
+                <a href="#">Londan</a>
+            </div>
+        
+            <div class="box">
+                <h3>Contact Us</h3>
+                <a href="https://www.facebook.com/login/">facebook</a>
+                <a href="https://www.instagram.com/accounts/login/">Instagram</a>
+                <a href="https://twitter.com/">twitter</a>
+            </div>
+        
+            <div class="box">
+                <h3>Quick Links</h3>
+                <a href="index.html">home</a>
+                <a href="About.html">About</a>
+                <a href="Blog.html">Blog</a>
+                <a href="contact.html">Contact</a>
+                <a href="Course.html">Course</a>
+                
+            </div>
+        
+        </div>
+        
+        <h1 class="credit"> University Website <span>Created By Dheeraj Verma</span> All Right reserved</h1>
+        
+        </section>
+        
+
+
+
+
+
+
+
+
+
+
+
+    <!--------javascript for toggle menu-------->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+
+    <script>
+
+
+        var navLinks = document.getElementById("navLinks")
+
+        function hideMenu() {
+            navLinks.style.right = "-200px";
+        }
+
+        function showMenu() {
+            navLinks.style.right = "0";
+
+        }
+
+
+    </script>
+
+
+</body>
+
+</html>
